@@ -7,11 +7,21 @@ namespace Open_Lab_04._03
     {
         public string RemoveFirstLast(string original_String)
         {
-            string v = original_String.Remove(0, 1);
-            string Removed_First = v;
-            string a = Removed_First.Remove(Removed_First.Length - 1, 1);
-            string Removed_Last = a;
-            return Removed_Last;
+            if (original_String.Length > 2)
+            {
+                string result = original_String.Substring(1, original_String.Length - 2);
+                return result;
+            }
+            else if (original_String.Length == 1)
+            {
+                return original_String; //Length is 1 so first and last character can't be removed.
+            }
+            else
+            {
+                return string.Empty; //Length is 2, first and last character is removed so string is empty.
+            }
+
+
         }
     }
 }
